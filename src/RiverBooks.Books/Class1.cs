@@ -15,21 +15,36 @@ internal static class Constants
     }
 }
 
+internal interface IBooksService
+{
+    Task<IEnumerable<Book>> GetAllAsync();
+}
 
+internal record Book(int Id, string Title);
+
+internal class BooksService : IBooksService
+{
+    public async Task<IEnumerable<Book>> GetAllAsync()
+    {
+        await Task.Delay(1000);
+        return new List<Book>
+        {
+            new(1, "Book 1"),
+            new(2, "Book 2"),
+            new(3, "Book 3"),
+        };
+    }
+}
 public static class StartupExtensions
 {
     public static void AddBooksModule(this IServiceCollection services)
     {
-       
+       services.AddScoped<IBooksService, BooksService>();
     }
 
     public static void UseBooksModule(this WebApplication app)
     {
-        app.MapGet(Constants.Endpoints.GetAll,  () => new List<object>()
-        {
-            new { Id = 1, Title = "Book 1" },
-            new { Id = 2, Title = "Book 2" },
-            new { Id = 3, Title = "Book 3" },
-        });
+        app.MapGet(Constants.Endpoints.GetAll, (IBooksService booksService) => booksService.GetAllAsync())
+            .WithName("GetAllBooks");
     }
 }
