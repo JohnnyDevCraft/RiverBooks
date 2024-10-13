@@ -17,21 +17,21 @@ internal static class Constants
 
 internal interface IBooksService
 {
-    Task<IEnumerable<Book>> GetAllAsync();
+    Task<IEnumerable<BookDto>> GetAllAsync();
 }
 
-internal record Book(int Id, string Title);
+internal record BookDto(int Id, string Title, string Author);
 
 internal class BooksService : IBooksService
 {
-    public async Task<IEnumerable<Book>> GetAllAsync()
+    public async Task<IEnumerable<BookDto>> GetAllAsync()
     {
         await Task.Delay(1000);
-        return new List<Book>
+        return new List<BookDto>
         {
-            new(1, "Book 1"),
-            new(2, "Book 2"),
-            new(3, "Book 3"),
+            new BookDto(1, "The Fellowship of the Ring", "J.R.R. Tolkien"),
+            new BookDto(2, "The Two Towers", "J.R.R. Tolkien"),
+            new BookDto(3, "The Return of the King", "J.R.R. Tolkien")
         };
     }
 }
