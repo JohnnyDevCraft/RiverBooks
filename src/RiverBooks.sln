@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.Api", "RiverBooks.Api\RiverBooks.Api.csproj", "{B8E620E3-66BE-4D2D-97D6-2E16BE0C4FA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.Books", "RiverBooks.Books\RiverBooks.Books.csproj", "{0231AD39-C01D-452D-BC41-48F3E3476AA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8E620E3-66BE-4D2D-97D6-2E16BE0C4FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8E620E3-66BE-4D2D-97D6-2E16BE0C4FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8E620E3-66BE-4D2D-97D6-2E16BE0C4FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8E620E3-66BE-4D2D-97D6-2E16BE0C4FA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0231AD39-C01D-452D-BC41-48F3E3476AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0231AD39-C01D-452D-BC41-48F3E3476AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0231AD39-C01D-452D-BC41-48F3E3476AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0231AD39-C01D-452D-BC41-48F3E3476AA2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+@RiverBooks.Api_HostAddress = http://localhost:5118
+
+GET {{RiverBooks.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{RiverBooks.Api_HostAddress}}/api/Books/
+Accept: application/json
+
+###
