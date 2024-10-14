@@ -1,4 +1,7 @@
-namespace RiverBooks.Books;
+using RiverBooks.Books.Abstractions;
+using RiverBooks.Books.DataTransfer;
+
+namespace RiverBooks.Books.Implimentations;
 
 internal class BooksService : IBooksService
 {

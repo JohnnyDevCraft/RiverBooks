@@ -1,4 +1,6 @@
-using RiverBooks.Books;
+using FastEndpoints;
+using RiverBooks.Api;
+using RiverBooks.Books.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddBooksModule();
+builder.Services.AddFastEndpoints();
 
 var app = builder.Build();
 
@@ -40,11 +43,14 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
-app.UseBooksModule();
+app.UseFastEndpoints();
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+namespace RiverBooks.Api
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+    {
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
 }
