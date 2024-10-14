@@ -7,11 +7,6 @@ internal static class BookResultExtensions
 {
     internal static BookResult ToBookResult(this BookDto bookDto)
     {
-        return new BookResult
-        {
-            Id = bookDto.Id,
-            Title = bookDto.Title,
-            Author = bookDto.Author
-        };
+        return new BookResult(bookDto.Id, bookDto.Title, bookDto.Author);
     }
 }
